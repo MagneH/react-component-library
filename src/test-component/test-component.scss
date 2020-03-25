@@ -1,0 +1,19 @@
+@import '../variables.scss';
+@import '../typography.scss';
+
+.test-component {
+  background-color: $color-white--100;
+  border: 1px solid $color-black--100;
+  padding: 16px;
+  width: 360px;
+  text-align: center;
+
+  .heading {
+    @include heading;
+  }
+
+  &.test-component-secondary {
+    background-image: url('../assets/images/milky-way.jpg');
+    color: $color-white--100;
+  }
+}

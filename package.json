@@ -1,0 +1,114 @@
+{
+  "name": "react-component-library",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "files": [
+    "build"
+  ],
+  "description": "A starter for creating easily installable react component libraries.",
+  "scripts": {
+    "start:watch": "rollup -c -w",
+    "build": "rollup -c",
+    "pretest": "npm run check",
+    "test": "jest --watch",
+    "test:once": "jest",
+    "check:types": "tsc --noEmit",
+    "check:format": "prettier --list-different \"**/*.{css,less,sass,scss,html,md,graphql,gql,json,ts,tsx,js,jsx,yml,yaml}\"",
+    "check:linting": "eslint --cache --cache-location node_modules/.cache/.eslintcache \"*.{ts,js}?(x)\" \"{src,test,types,webpack}/**/*.{ts,js}?(x)\"",
+    "check": "npm-run-all check:*",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "update-snapshots": "jest --updateSnapshot",
+    "apply:format": "prettier --write \"**/*.{css,less,sass,scss,html,md,graphql,gql,json,ts,tsx,js,jsx,yml,yaml}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MagneH/react-library"
+  },
+  "keywords": [
+    "React",
+    "Component",
+    "Library",
+    "Rollup",
+    "Typescript",
+    "Sass",
+    "Storybook"
+  ],
+  "author": "MagneH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MagneH/react-component-library/issues"
+  },
+  "homepage": "https://github.com/MagneH/react-component-library",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged && npm test:once"
+    }
+  },
+  "lint-staged": {
+    "*.{css,less,sass,scss,html,md,graphql,gql,json,ts,tsx,js,jsx,yml,yaml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@rollup/plugin-url": "^4.0.2",
+    "@storybook/addon-a11y": "^5.3.17",
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addons": "^5.3.17",
+    "@storybook/react": "^5.3.17",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^24.0.24",
+    "@types/react": "^16.9.25",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "file-loader": "^6.0.0",
+    "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^10.0.9",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-assets": "^5.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-inline-base64": "^4.1.0",
+    "prettier": "^2.0.2",
+    "rollup": "^1.27.4",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-postcss": "^2.5.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "sass-loader": "^8.0.2",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "postcss-url": "^8.0.0"
+  }
+}

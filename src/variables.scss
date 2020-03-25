@@ -1,0 +1,15 @@
+// ----------------
+// Standard colors
+// ----------------
+$color-white--100: #efefef;
+$color-black--100: #101010;
+$color-black--80: #222222;
+
+// ----------------------------------
+// Screen size breakpoints in pixels
+// ----------------------------------
+$breakpoint-phone-down: 599;
+$breakpoint-tablet-portrait-up: $breakpoint-phone-down + 1;
+$breakpoint-tablet-landscape-up: 900;
+$breakpoint-desktop-up: 1200;
+$breakpoint-large-desktop-up: 1800;
